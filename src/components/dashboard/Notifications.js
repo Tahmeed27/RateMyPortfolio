@@ -11,8 +11,7 @@ import moment from 'moment'
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    marginTop: '3rem',
-    marginLeft: '2rem',
+    padding: '1rem',
     maxWidth: '40ch'
 
   },

@@ -38,7 +38,6 @@ exports.userJoined = functions.auth.user()
                 user: `${newUser.firstName} ${newUser.lastName}`,
                 time: admin.firestore.FieldValue.serverTimestamp()
             }
-
             return createNotifcation(notification);
         })
 
