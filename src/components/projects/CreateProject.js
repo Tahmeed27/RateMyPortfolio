@@ -95,20 +95,21 @@ export class CreateProject extends Component {
                 tickerName: value['2. name']
             }, () => {
                 // This will output an array of objects
-                // given by Autocompelte options property.
+                // given by Autocomplete options property.
                 console.log(this.state.ticker);
             });
         }
     }
-    handleDelete = (event) => {
+    handleDelete = () => {
         this.setState(state => {
             return {
                 tickers: state.tickers.slice(0, -1),
+                tickerNames: state.tickerNames.slice(0, -1),
                 percentages: state.percentages.slice(0, -1)
             }
         })
     }
-    handleCreate = (event) => {
+    handleCreate = () => {
         console.log(this.state);
 
         let sum = this.state.percentages.reduce((a, b) => {
@@ -165,7 +166,7 @@ export class CreateProject extends Component {
                                                         <Autocomplete
                                                             id="ticker"
                                                             onChange={this.onTagsChange}
-                                                            getOptionLabel={(item) => item['1. symbol']}
+                                                            getOptionLabel={(item) => item['1. symbol'] + ', ' + item['2. name']}
                                                             // options={Object.keys(this.state.searchResults).length ? this.state.searchResults : [] }
                                                             options={this.state.searchResults}
                                                             renderInput={(params) => (
