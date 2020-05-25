@@ -63,7 +63,8 @@ const LineGraph = (props) => {
         if (chars[1] == 'TRT') ticker = ticker.slice(0, -3) + 'TO'
         
         const API_key = 'bqo7povrh5reqlm366jg';
-        let lineAPI = `https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=15&count=200&token=${API_key}`;
+        console.log(ticker)
+        let lineAPI = `https://finnhub.io/api/v1/stock/candle?symbol=${ticker}&resolution=15&from=1572651390&to=1572910590&token=bqo7povrh5reqlm366jg`;
         let priceAPI = `https://finnhub.io/api/v1/quote?symbol=${ticker}&token=${API_key}`
         const axios = require('axios');
 
